@@ -202,11 +202,11 @@
         port: 14604 // optional, only if you need a custom port
     }, function (err, status) {
         if (err) {
-            return document.querySelector('.server-stats').innerHTML = "<div><span class='heading'>无法读取</span><span class='description'>服务器状态</span></div>";
+            return document.querySelector('#server-stats').innerHTML = "<div><span class='heading'>无法读取</span><span class='description'>服务器状态</span></div>";
         }
 
         // you can change these to your own message!
-        document.querySelector('.server-stats').innerHTML = status.online ? "<div><span class='heading'>" + status.players.now + "/20</span><span class='description'>在线</span></div>" : "<div><span class='heading'>关服</span><span class='description'>服务器状态</span></div>";
+        document.querySelector('#server-stats').innerHTML = status.online ? "<div><span class='heading'>" + status.players.now + "/20</span><span class='description'>在线</span></div>" : "<div><span class='heading'>关服</span><span class='description'>服务器状态</span></div>";
     });
 </script>
 </html>
