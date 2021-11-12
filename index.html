@@ -149,15 +149,7 @@
               </div>
               <div class="col-lg-4 order-lg-1">
                 <div class="card-profile-stats d-flex justify-content-center">
-                  <?php
-                    if ($status == "在线") {
-                      echo "<div><span class='heading'>".$online."/".$max."</span><span class='description'>Onlines</span></div>";
-                      echo "<div><span class='heading'>".$delay."ms</span><span class='description'>Deplay</span></div>";
-                      echo "<div><span class='heading'>".$version."</span><span class='description'>Version</span></div>";
-                    } else {
-                      echo "<div><span class='heading'>Offline</span><span class='description'>服务器状态</span></div";
-                    }
-                    ?>
+                  <c id="server-stats"></c>
                   <div>
                   </div>
                 </div>
@@ -173,6 +165,7 @@
                 <div class="col-lg-9">
                   <p>
                     <a href="https://qm.qq.com/cgi-bin/qm/qr?k=wf5xfp6Pj8MqamMGbvmSzdpTsZbZLWI-&jump_from=webapi"><button id="join" class="btn btn-info btn-round">点我加入QQ群立刻开玩！</button></a>
+                    <br />
                     <br />
                     加入我们的世界吧，同我们携手共进！
                   </p>
@@ -203,5 +196,17 @@
     </div>
   </footer>
 </body>
+<script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+<script>
+    MinecraftAPI.getServerStatus('43.249.193.167', {
+        port: 14604 // optional, only if you need a custom port
+    }, function (err, status) {
+        if (err) {
+            return document.querySelector('.server-stats').innerHTML = "<div><span class='heading'>无法读取</span><span class='description'>服务器状态</span></div>";
+        }
 
+        // you can change these to your own message!
+        document.querySelector('.server-stats').innerHTML = status.online ? "<div><span class='heading'>" + status.players.now + "/20</span><span class='description'>在线</span></div>" : "<div><span class='heading'>关服</span><span class='description'>服务器状态</span></div>";
+    });
+</script>
 </html>
