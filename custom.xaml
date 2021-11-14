@@ -1,0 +1,18 @@
+<local:MyCard Title="快捷操作" CanSwap="True" IsSwaped="False" Margin="0,0,0,10">
+    <StackPanel Margin="25,40,23,15">
+        <!-- 这是第一行 -->
+        <TextBlock Margin="0,0,0,10" Text="违规投诉" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" Text="举报违规" EventType="打开网页" EventData="https://wj.qq.com/s2/9308063/d454/" ToolTip=" " />
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" Text="申请回滚" EventType="打开网页" EventData="https://wj.qq.com/s2/9308092/4192/" ToolTip="" />
+        </StackPanel>
+        <TextBlock Margin="0,10,0,0" Text="资料查询" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,10,0" Width="100" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" Text="最新公告" EventType="打开网页" EventData="https://docs.qq.com/doc/DUEhaUU1DV1dpalBk" ToolTip="查看服务器的最新动态！" />
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+<local:MyButton Margin="0,0,10,0" Width="100" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="刷新缓存" EventType="刷新主页" ToolTip="重新载入公告栏" />
+</StackPanel>
